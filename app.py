@@ -117,7 +117,7 @@ if st.button("🔁 Remix Now"):
 
         clips = []
         for file in selected_files:
-            path = os.path.join("sounds", file)
+            path = os.path.join(os.path.dirname(__file__), "sounds", file)
             clip = AudioSegment.from_file(path)
             clip = clip.fade_in(300).fade_out(300)
             clip = clip.apply_gain(random.uniform(-5, 2))
@@ -149,7 +149,7 @@ if st.button("🔁 Remix Now"):
 
         # Export final mix
         output_name = f"{selected_mood}_remix_{mixing_style}.mp3"
-        output_path = os.path.join("sounds", output_name)
+        output_path = os.path.join(os.path.dirname(__file__), "sounds", output_name)
         combined.export(output_path, format="mp3")
 
         # Display waveform

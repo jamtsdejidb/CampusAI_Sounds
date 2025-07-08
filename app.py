@@ -67,7 +67,7 @@ if uploaded_files:
 
     for uploaded_file in uploaded_files:
         filename = uploaded_file.name
-        save_path = os.path.join("sounds", filename)
+        save_path = os.path.join(os.path.dirname(__file__), "sounds", filename)
 
         # Save uploaded file
         with open(save_path, "wb") as f:

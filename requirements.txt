@@ -4,3 +4,4 @@ numpy
 pydub
 librosa
 matplotlib
+ffmpeg

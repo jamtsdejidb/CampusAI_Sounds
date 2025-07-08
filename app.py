@@ -2,10 +2,14 @@ import os
 import random
 import pandas as pd
 from pydub import AudioSegment
+from pydub.utils import which
 import streamlit as st
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
+
+# 🎯 Force the correct ffmpeg binary location
+AudioSegment.converter = which("ffmpeg") or "/usr/bin/ffmpeg"
 
 # === Streamlit UI ===
 st.title("🎧 Campus AI Sound Mixer")

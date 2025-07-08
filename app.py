@@ -92,7 +92,7 @@ if uploaded_files:
     existing.to_csv("metadata.csv", index=False)
 
 # === Load metadata ===
-metadata = pd.read_csv("metadata.csv", delimiter=",")metadata_path = os.path.join(os.path.dirname(__file__), "metadata.csv")
+metadata_path = os.path.join(os.path.dirname(__file__), "metadata.csv")
 metadata = pd.read_csv(metadata_path, delimiter=",")
 metadata.columns = metadata.columns.str.strip()
 
